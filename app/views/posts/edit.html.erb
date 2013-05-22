@@ -1,0 +1,21 @@
+<h1>Edit Post</h1>
+
+<%= form_for @post do |p| %>
+	<p>
+		<%= p.label :title %><br/>
+		<%= p.text_field :title %>
+	</p>
+	<p>
+		<%= p.label :user %><br/>
+		<%= p.collection_select(:user_id, User.all, :id, :name) %>
+	</p>
+	<p>
+		<%= p.label :content %><br/>
+		<%= p.text_area :content %>
+	</p>
+		<p>
+		<%= p.submit "Update" %>
+<% end %>
+
+<hr />
+<%= link_to "Cancel and return to All Posts", posts_path %>

@@ -1,0 +1,22 @@
+<h1>Create a new Post</h1>
+
+<%= form_for @post do |p| %>
+	<p>
+		<%= p.label :title %><br/>
+		<%= p.text_field :title %>
+	</p>
+	<p>
+		<%= p.label :user %><br/>
+		<%= p.collection_select(:user_id, User.all, :id, :name) %>
+	</p>
+	<p>
+		<%= p.label :content %><br/>
+		<%= p.text_area :content, :size => "80x12" %>
+	</p>
+		<p>
+		<%= p.submit "Create" %>
+<% end %>
+
+<hr />
+<%= link_to "Cancel and return to All Posts", posts_path %>
+<p></p>

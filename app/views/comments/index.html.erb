@@ -1,0 +1,10 @@
+<h1>Comments by <%= @user.name %>:</h1>
+
+
+<% @comments.each do |comment| %>
+    <p><%= comment.content %></p>
+	<p>&nbsp;</p>
+<% end %>
+</table>
+
+<br />

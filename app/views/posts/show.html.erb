@@ -1,0 +1,31 @@
+<h1><%= @post.title %></h1>
+<p><i>by <%= @post.user.name %></i><p>
+
+<p><%= @post.content %></p>
+
+<p>Last updated: <%= @post.updated_at %>
+
+<hr />
+<h2>Comments</h2>
+
+<h4>Comment on this post</h4>
+<%= form_for [@post, @newcomment] do |nc| %>
+	<p>
+		<%= nc.label :content %><br/>
+		<%= nc.text_area :content, :size => "60x4" %>
+	</p>
+	<p>
+		<%= nc.submit "Create" %>
+	</p>
+<% end %>
+
+<hr />
+
+<% @comments.each do |comment| %>
+    <h4><%= link_to comment.user.name, user_comments_path(comment.user) %></h4>
+    <p><%= comment.content %></p>
+<% end %>
+<hr />
+<p><%= link_to 'Edit this post', edit_post_path %></p>
+<p></p>
+<p><%= link_to "<- Back to All Posts", posts_path %></p>

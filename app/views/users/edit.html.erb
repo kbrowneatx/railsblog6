@@ -1,0 +1,35 @@
+<h1>Edit User</h1>
+<p>&nbsp;</p>
+<%= form_for @user do |u| %>
+	<p>
+		<%= u.label :name %><br/>
+		<%= u.text_field :name %>
+	</p>
+	<p>
+		<%= u.label :email %><br/>
+		<%= u.text_field :email %>
+	</p>
+	<p>
+		<%= u.label :twitter %><br/>
+		<%= u.text_field :twitter %>
+	</p>
+	<p>
+		<%= u.label :website %><br/>
+		<%= u.text_field :website %>
+	</p>
+	<p>
+		<%= u.label :role %><br/>
+		<%= select_tag(:role, options_for_select([['Author (admin must approve)', 'author'],['Reader', 'reader'],['Post as Anonymous','anon_reader']],'reader')) %>
+	</p>
+	<p>
+		<%= u.label :bio %><br/>
+		<%= u.text_area :bio, :size => "60x6" %>
+	</p>
+	<p>
+	<%= u.submit "Update" %>
+	</p>
+<% end %>
+
+<hr />
+<p><%= link_to "Cancel and return to All Users", users_path %></p>
+<p></p>

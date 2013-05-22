@@ -1,0 +1,19 @@
+<h1>User Info</h1>
+<p>&nbsp;</p>
+<p>Name: &emsp; <span><%= @user.name %></span></p>
+<p>Email: &emsp; <span><%= @user.email %></span></p>
+<p>Twitter: &emsp; <span><%= @user.twitter %></span></p>
+<p>Website: &emsp; <span><%= @user.website %></span></p>
+<p>Bio: &emsp; <span><%= @user.bio %></span></p>
+<p>Role: &emsp; <span><%= @user.role %></span></p>
+
+<h2>Posts by <%= @user.name %></h2>
+
+<% @user.posts.each do |post| %>
+    <p><%= link_to post.title, post_path(post) %></p>
+<% end %>
+
+<hr />
+<p><%= link_to 'Edit user info', edit_user_path(@user) %></p>
+<p><%= link_to "<- Back to All Users", users_path %></p>
+<p></p>

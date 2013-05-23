@@ -2,8 +2,10 @@
 
 
 <% @comments.each do |comment| %>
+ <div class='well'>
     <p><%= comment.content %></p>
-	<p>&nbsp;</p>
+	<p class="pull-right">in response to '<%= comment.post.title %>'</p>
+ </div>
 <% end %>
 </table>
 

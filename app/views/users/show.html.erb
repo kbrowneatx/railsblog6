@@ -1,19 +1,33 @@
 <h1>User Info</h1>
 <p>&nbsp;</p>
-<p>Name: &emsp; <span><%= @user.name %></span></p>
-<p>Email: &emsp; <span><%= @user.email %></span></p>
-<p>Twitter: &emsp; <span><%= @user.twitter %></span></p>
-<p>Website: &emsp; <span><%= @user.website %></span></p>
-<p>Bio: &emsp; <span><%= @user.bio %></span></p>
-<p>Role: &emsp; <span><%= @user.role %></span></p>
+<table class='table table-bordered table-condensed'>
+  <tr>
+	<td>Name</td><td><%= @user.name %></td>
+  </tr>
+  <tr>
+	<td>Email</td><td><%= @user.email %></td>
+  </tr>
+  <tr>
+	<td>Twitter</td><td><%= @user.twitter %></td>
+  </tr>
+  <tr>
+	<td>Website</td><td><%= @user.website %></td>
+  </tr>
+  <tr>
+	<td>Bio</td><td><%= @user.bio %></td>
+  </tr>
+  <tr>
+	<td>Role</td><td><%= @user.role %></td>
+  </tr>
+</table>	
+<hr />
+<p><%= link_to 'Edit user info', edit_user_path(@user), { :class => "btn btn-warning" } %></p>
+<p><%= link_to "<- Back to All Users", users_path, { :class => "btn btn-primary" } %></p>
+<p></p>
 
-<h2>Posts by <%= @user.name %></h2>
+<h3>Posts by <%= @user.name %></h3>
 
 <% @user.posts.each do |post| %>
     <p><%= link_to post.title, post_path(post) %></p>
 <% end %>
 
-<hr />
-<p><%= link_to 'Edit user info', edit_user_path(@user) %></p>
-<p><%= link_to "<- Back to All Users", users_path %></p>
-<p></p>

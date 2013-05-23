@@ -26,9 +26,9 @@
 		<%= u.text_area :bio, :size => "60x6" %>
 	</p>
 	<p>
-	<%= u.submit "Create" %>
+	<%= u.submit "Create", { :class => "btn btn-inverse" } %>
 	</p>
 <% end %>
 
 <hr />
-<p><%= link_to "Cancel and return to All Users", users_path %></p>
+<p><%= link_to "Cancel and return to All Users", users_path, { :class => "btn btn-primary" } %></p>

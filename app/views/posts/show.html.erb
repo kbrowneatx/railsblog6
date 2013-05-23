@@ -8,14 +8,13 @@
 <hr />
 <h2>Comments</h2>
 
-<h4>Comment on this post</h4>
+<h5>Comment on this post</h5>
 <%= form_for [@post, @newcomment] do |nc| %>
 	<p>
-		<%= nc.label :content %><br/>
-		<%= nc.text_area :content, :size => "60x4" %>
+		<%= nc.text_area :content %>
 	</p>
 	<p>
-		<%= nc.submit "Create" %>
+		<%= nc.submit "Create", { :class => "btn btn-inverse" } %>
 	</p>
 <% end %>
 
@@ -26,6 +25,6 @@
     <p><%= comment.content %></p>
 <% end %>
 <hr />
-<p><%= link_to 'Edit this post', edit_post_path %></p>
+<p><%= link_to 'Edit this post', edit_post_path, { :class => "btn btn-warning" } %></p>
 <p></p>
-<p><%= link_to "<- Back to All Posts", posts_path %></p>
+<p><%= link_to "<- Back to All Posts", posts_path, { :class => "btn btn-primary" } %></p>

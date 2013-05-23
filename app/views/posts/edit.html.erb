@@ -14,8 +14,8 @@
 		<%= p.text_area :content %>
 	</p>
 		<p>
-		<%= p.submit "Update" %>
+		<%= p.submit "Update", { :class => "btn btn-inverse" } %>
 <% end %>
 
 <hr />
-<%= link_to "Cancel and return to All Posts", posts_path %>
+<%= link_to "Cancel and return to All Posts", posts_path, { :class => "btn btn-primary" } %>

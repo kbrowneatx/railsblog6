@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522153501) do
+ActiveRecord::Schema.define(:version => 20130524031109) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -33,12 +33,13 @@ ActiveRecord::Schema.define(:version => 20130522153501) do
     t.string   "name"
     t.string   "email"
     t.string   "password"
-    t.string   "role",       :default => "reader"
+    t.string   "role",            :default => "reader"
     t.text     "bio"
     t.string   "twitter"
     t.string   "website"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.boolean  "postanonymously", :default => false
   end
 
 end

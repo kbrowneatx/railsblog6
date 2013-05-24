@@ -6,12 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u1 = User.create(name:'MalJr', email:'maljr@fireflyforum.net', bio:'Watched all episodes 10x', role:'author', twitter:'@FakeMalcolm', website:'www.fireflyforum.net')
-u2 = User.create(name:'NotWash', email:'notwash@fireflyforum.net', bio:'Watched all episodes 10x more than FakeMal', role:'author', twitter:'@FakeAlanTudyk', website:'www.fireflyforum.net')
-u3 = User.create(name:'troll247', email:'troll247@aol.com', bio:'UNDERSTOOD all episodes', role:'reader')
-u4 = User.create(name:'SilentSteve', email:'steve@bloc.io', role:'anon_reader')
+u1 = User.create(name:'MalJr', email:'maljr@fireflyforum.net', bio:'Watched all episodes 10x', role:'author', twitter:'@FakeMalcolm', website:'www.fireflyforum.net', postanonymously: false)
+u2 = User.create(name:'NotWash', email:'notwash@fireflyforum.net', bio:'Watched all episodes 10x more than FakeMal', role:'author', twitter:'@FakeAlanTudyk', website:'www.fireflyforum.net', postanonymously: false)
+u3 = User.create(name:'troll247', email:'troll247@aol.com', bio:'UNDERSTOOD all episodes', role:'reader', postanonymously: false)
+u4 = User.create(name:'SilentSteve', email:'steve@bloc.io', role:'reader', postanonymously: true)
 u3.twitter = '@RealFireflyFan'
-u5 = User.create(name:'InaraSera', email:'inara@fireflyforum.net', bio:'Prettiest of the bunch', role:'author', twitter:'@FakeCompanion', website:'www.fireflyforum.net')
+u5 = User.create(name:'InaraSera', email:'inara@fireflyforum.net', bio:'Prettiest of the bunch', role:'author', twitter:'@FakeCompanion', website:'www.fireflyforum.net', postanonymously: false)
 
 p1 = Post.create(title:'Welcome to the Forum', content:'It has been over a decade since the suits heartlessly cancelled the best show on TV.', user_id: 1)
 p2 = Post.create(title:'Second Post', content:'I cannot believe the show is still cancelled.', user_id: 2)

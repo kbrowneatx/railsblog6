@@ -40,6 +40,7 @@ class PostsController < ApplicationController
 	if @post.destroy
 		redirect_to posts_path
 	else
+		raise
 		flash[:error] = "Error deleting post. Try again or contact sysadmin"
 		redirect_to @post
 	end

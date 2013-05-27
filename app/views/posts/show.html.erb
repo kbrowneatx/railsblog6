@@ -9,12 +9,15 @@
 <h2>Comments</h2>
 
 <h5>Comment on this post</h5>
-<%= form_for [@post, @newcomment] do |nc| %>
+<%= form_for @post do |post_form| %>
+  <%= post_form.fields_for @newcomment do |nc| %>
 	<p>
-		<%= nc.text_area :content %>
+	  <%= nc.text_area :content %>
 	</p>
+
+  <% end %>
 	<p>
-		<%= nc.submit "Create", { :class => "btn btn-inverse" } %>
+	  <%= post_form.submit "Create", { :class => "btn btn-inverse" } %>
 	</p>
 <% end %>
 

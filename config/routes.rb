@@ -3,7 +3,7 @@ Railsblog6::Application.routes.draw do
     resources :comments, :only => [:index]
   end
   resources :posts do
-	resources :comments, :only => [:index, :new, :create]
+	resources :comments, :only => [:index, :new, :create, :edit, :update]
   end
 
   root :to => 'posts#index'

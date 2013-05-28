@@ -13,13 +13,16 @@
 @import 'bootstrap';
 $my_red: #cc0000;
 
+text_area{
+	columns: 100;
+	rows: 8;
+}
 .field_with_errors {
 	color: $my_red;
 }
 
 #error_explanation {
 	color: $my_red;
-	border: 2px solid $my_red;
 	width: 400px;
 	h2 {
 	  margin: 0;

@@ -1,0 +1,16 @@
+<%= form_for(post) do |p| %>
+	<p>
+		<%= p.label :title %><br/>
+		<%= p.text_field :title %>
+	</p>
+	<p>
+		<%= p.label :user %><br/>
+		<%= p.collection_select(:user_id, User.all, :id, :name) %>
+	</p>
+	<p>
+		<%= p.label :content %><br/>
+		<%= p.text_area :content, :size => "120x8" %>
+	</p>
+		<p>
+		<%= p.submit :class => "btn btn-inverse" %>
+<% end %>

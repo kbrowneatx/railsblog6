@@ -10,7 +10,10 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
 	@comment = @post.comments.build(params[:comment])
-	@comment.user_id = 3
+		if @comment.user_id.nil?
+			@comment.user_id = rand(1..4)
+			@comment.save
+		end if
 	if @comment.save
 		redirect_to @post
 	else

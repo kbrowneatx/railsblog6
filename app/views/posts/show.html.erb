@@ -10,7 +10,7 @@
 
 <h5>Comment on this post</h5>
 <%= form_for @post do |post_form| %>
-  <%= post_form.fields_for @newcomment do |nc| %>
+  <%= post_form.fields_for :comments, @newcomment do |nc| %>
 	<p>
 	  <%= nc.text_area :content %>
 	</p>

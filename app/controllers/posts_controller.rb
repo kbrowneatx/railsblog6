@@ -29,6 +29,11 @@ class PostsController < ApplicationController
   def update
 	@post = Post.find(params[:id])
 	if @post.update_attributes(params[:post])
+		c = @post.comments.last
+		if c.user_id.nil?
+			c.user_id = rand(1..4)
+			c.save
+		end if
 		redirect_to @post
 	else
 		render :edit

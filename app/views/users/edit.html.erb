@@ -1,52 +1,11 @@
 <h1>Edit User Data</h1>
 <p>&nbsp;</p>
-<%= form_for @user, { :class => 'form-horizontal' } do |u| %>
-	<div id="error_explanation">
-		<%= u.error_messages %>
-	</div>
-	<div class="control-group">
-		<%= u.label :name, { :class => 'control-label' } %>
-		<div class="controls">
-		  <%= u.text_field :name, { :class => 'controls' } %>
-		</div>
-	</div>
-	<div class="control-group">
-		<%= u.label :email, { :class => 'control-label' } %>
-		<div class="controls">
-		  <%= u.text_field :email %>
-		</div>
-	</div>
-	<div class="control-group">
-		<%= u.label :email_confirmation, { :class => 'control-label' } %>
-		<div class="controls">
-		  <%= u.text_field :email_confirmation %>
-		</div>
-	</div>	
-	<div class="control-group">
-		<%= u.label :twitter, { :class => 'control-label' } %>
-		<div class="controls">
-		  <%= u.text_field :twitter %>
-		</div>
-	</div>
-	<div class="control-group">
-		<%= u.label :website, { :class => 'control-label' } %>
-		<div class="controls">
-		  <%= u.text_field :website %>
-		</div>
-	</div>
-	<div class="control-group">
-		<%= u.label :bio, { :class => 'control-label' } %>
-		<div class="controls">
-		  <%= u.text_area :bio, :size => "60x6" %>
-		</div>
-	</div>
-	<div class="controls">
-		<label class="checkbox"><%= u.check_box :postanonymously %>Post as anonymous </label><br />
-		<%= u.submit "Update", { :class => "btn btn-inverse" } %>
-	</div>
-	<p></p>
-<% end %>
-
+<div id="error_explanation">
+	<%= error_messages_for :user %>
+</div>
+<div class: 'form-horizontal'>
+	<%= render :partial => 'user', :locals => { :user => @user } %>
+</div>
 <hr />
 <p><%= link_to "Cancel and return to All Users", users_path, { :class => "btn btn-primary" } %></p>
 <p></p>

@@ -3,7 +3,8 @@
 <% @posts.each do |post| %>
     <div class="well">
 		<h3><%= link_to post.title, post %></h3>
-		<p><%= post.content %></p>
+		<p><%= post.content[0..100] %>... (more) </p>
+		<p><span style="font: italic 10px serif;">Last updated: <%= post.updated_at %></span> &emsp; | &emsp; <span style="color: #cc0000;"><%= post.comments.count %> comments</span></p>
 		<p><%= link_to 'Edit', edit_post_path(post), { :class => "btn btn-warning" } %> 
 		  <%= link_to 'Delete', post, class: 'btn btn-danger', method: :delete, confirm: 'Are you sure?' %></p>
 	</div>

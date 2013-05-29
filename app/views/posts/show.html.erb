@@ -12,7 +12,7 @@
 <%= form_for @post do |post_form| %>
   <%= post_form.fields_for :comments, @newcomment do |nc| %>
 	<p>
-	  <%= nc.text_area :content %>
+	  <%= nc.text_area :content, :size => "160x6" %>
 	</p>
 
   <% end %>
@@ -22,11 +22,14 @@
 <% end %>
 
 <hr />
-
-<% @comments.each do |comment| %>
-    <h4><%= link_to comment.user.name, user_comments_path(comment.user) %></h4>
-    <p><%= comment.content %></p>
-<% end %>
+<table class='table table-striped'>
+	<% @comments.each do |comment| %>
+		<tr>
+		  <td><%= link_to comment.user.name, user_comments_path(comment.user) %></td>
+		  <td><%= comment.content %> (posted at <%= comment.created_at %>)</td>
+		</tr>
+	<% end %>
+</table>
 <hr />
 <p><%= link_to 'Edit this post', edit_post_path, { :class => "btn btn-warning" } %></p>
 <p></p>

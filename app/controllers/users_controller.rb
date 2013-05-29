@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
-	@users = User.all
+	@users = User.in_AtoZ
+	@avids = User.avidreader.map{|u| u.id}
   end
 
   def show

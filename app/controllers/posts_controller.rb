@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   def index
-	@posts = Post.all
+	@posts = Post.recent(1)
   end
 
   def show
     @post = Post.find(params[:id])
-	@comments = @post.comments.all
+	@comments = @post.comments.order('created_at DESC')
 	@newcomment = @post.comments.new
   end
 

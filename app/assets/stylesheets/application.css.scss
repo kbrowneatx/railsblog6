@@ -17,6 +17,11 @@ text_area{
 	columns: 100;
 	rows: 8;
 }
+.top_commenter{
+	background: #cc0000;
+	color: white;
+	font: 9px monotype;
+}
 .field_with_errors {
 	color: $my_red;
 }

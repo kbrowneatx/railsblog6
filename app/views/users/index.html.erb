@@ -11,7 +11,7 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= link_to user.name, user %></td>
+    <td><%= link_to user.name, user %> <span class="top_commenter"><%= if @avids.include?(user.id) then "top commenter" end %></span></td>
     <td><%= user.email %></td>
     <td><%= user.twitter %></td>
     <td><%= user.role %></td>

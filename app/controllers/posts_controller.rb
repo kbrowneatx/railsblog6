@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   def index
-	@posts = Post.recent(1)
+	if params[:page]
+		pg = params[:page].to_i
+	else
+		pg = 0
+	end
+	@posts = Post.recent.offset(pg * 3)
   end
 
   def show

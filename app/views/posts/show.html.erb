@@ -8,7 +8,7 @@
 <hr />
 <h2>Comments</h2>
 
-<h5>Comment on this post</h5>
+<h5><%= @user.name %>, comment on this post</h5>
 <%= form_for @post do |post_form| %>
   <%= post_form.fields_for :comments, @newcomment do |nc| %>
 	<p>

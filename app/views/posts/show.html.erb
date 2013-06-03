@@ -25,8 +25,12 @@
 <table class='table table-striped'>
 	<% @comments.each do |comment| %>
 		<tr>
-		  <td><%= link_to comment.user.name, user_comments_path(comment.user) %></td>
-		  <td><%= comment.content %> (posted at <%= comment.created_at %>)</td>
+		  <% if comment.user_id.nil? %>
+		    <td>name withheld</td>
+		  <% else %>
+		    <td><%= link_to comment.user.name, user_comments_path(comment.user) %></td>
+		  <% end %>
+		    <td><%= comment.content %> (posted at <%= comment.created_at %>)</td>
 		</tr>
 	<% end %>
 </table>
